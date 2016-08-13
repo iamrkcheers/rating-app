@@ -1,0 +1,65 @@
+#i{width: 350px;
+height: 100px    
+}
+
+/* Stars */
+.rating{color: #a9a9a9;
+  margin: 0;
+  padding: 0
+}
+
+ul.rating {display: inline-block
+}
+
+.rating li {list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer
+}
+
+.rating .filled {color: #21568b
+}
+
+table{margin: 10px
+}
+
+tr td{text-align: center;
+border: 2px solid lightblue;
+padding: 10px
+}
+
+div{padding: 10px;
+text-align: center
+}
+
+#b{background-color: white;
+color: darkgreen;
+font-family: fantasy;
+border: 1px solid lightblue;
+width: 400px;
+height: 40px
+}
+
+#l{background-color: white;
+color: darkgreen;
+border: 1px solid lightblue;
+width: 50px;
+height: 30px
+}
+
+select{width: 100px
+}
+
+::-webkit-input-placeholder{color: red;
+font-family: sans-serif;
+font-weight: bold;
+padding-left: 10px
+}
+
+#i2{width: 300px
+}
+
+ul{list-style: none
+}

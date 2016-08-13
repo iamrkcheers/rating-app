@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Rating App</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <script src="../libs/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="../model/factory.js"></script>
+    <script src="../controller/ctrl.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="ratingapp" ng-controller="ratingctrl">
+    <div>
+  <h1>RATING APP</h1>
+  <h3>Come and rate your employees !</h3>
+    </div>
+   <div class="container">
+   <div class="row">
+    <div class="col-sm-6">
+    <label for="">Employee Name</label><br><br>
+    <select ng-model="name">
+        <option value="Ram">Ram</option>
+        <option value="Ali">Ali</option>
+        <option value="John">John</option>
+        <option value="Jasjot">Jasjot</option>
+        <option value="Gita">Gita</option>
+    </select>
+    </div>
+    <div class="col-sm-6">
+    <label for="">Manager Name</label><br><br>
+    <input type="text" placeholder=" Enter manager name here ! " ng-model="mngr" id="i2">
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+    <label for="">Description</label><br><br>
+    <input type="text" id="i" placeholder=" Give your thoughts about the employee ! " ng-model="desc">
+    </div>
+        <!--Stars-->
+    <div class="col-sm-6">
+    <label for="">Rate the employee</label>
+    <div ng-init="rating = star.rating + 4" class="star-rating" star-rating rating-value="rating"
+    data-max="10" on-rating-selected="rateFunction(rating)"></div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+        <label for="">Top Employees</label><br><br>
+        <h1>{{id}}</h1>
+    </div>
+    </div>
+    <div>
+        <button ng-click="show()" id="b">Rate the employee !</button>
+    </div>
+    <div>
+        <button ng-click="remove(id)" id="b">Update</button>
+    </div>
+    <div>
+        <button ng-click="delete(id)" id="b">Delete</button>
+    </div>
+    <div>
+        <ul>
+            <li ng-repeat="emp in employee">
+                <table ng-click="update(emp)">
+                    <tr><td><h3>Employee Name</h3></td><td><h4>{{emp.name}}</h4></td></tr>
+                    <tr><td><h3>Description</h3></td><td><h4>{{emp.desc}}</h4></td></tr>
+                    <tr><td><h3>Rating</h3></td><td><h4>{{emp.rating}}</h4></td></tr>
+                    <tr><td><h3>Manager Name</h3></td><td><h4>{{emp.mngr}}</h4></td></tr>
+                    <tr><td><button class="glyphicon glyphicon-thumbs-up" ng-click="click(like)" id="l"></button></td><td><h4>{{like}}</h4></td></tr>
+                </table>
+                
+            </li>
+        </ul>
+    </div>
+    </div>
+</body>
+</html>
